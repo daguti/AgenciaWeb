@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.ReservaHotel" table="reservas_hoteles" catalog="agencia">
+
+      <id name="refReserva" column="REF_RESERVA_HOTEL" type="integer">
+          <generator class="native" />
+      </id>
+    
+      <property name="numHabInd" column="HAB_INDIVIDUAL" type="integer" />
+      <property name="numHabDob" column="HAB_DOBLE" type="integer" />
+      <property name="numHabSup" column="HAB_SUPERIOR" type="integer" />
+      
+      <property name="fecEnt" column="FECHA_ENTRADA" type="date" />
+      <property name="fecSal" column="FECHA_SALIDA" type="date" />
+      
+      <property name="preTot" column="PECIO_TOTAL" type="double" />
+
+      <many-to-one name="hotel" column="REF_HOTEL" class="agencia.modelo.Hotel" fetch="select"/>
+      
+      <one-to-one name="reserva" class="agencia.modelo.Reservas"
+			constrained="true"></one-to-one>
+
+  </class>
+
+</hibernate-mapping>
+

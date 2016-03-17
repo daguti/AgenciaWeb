@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.Avion" table="aviones" catalog="agencia">
+
+      <id name="refAvion" column="REF_AVION" type="integer">
+          <generator class="native" />
+      </id>
+    
+      <property name="descripcion" column="DESCRIPCION" type="string" />
+
+      <property name="numEco" column="PLAZAS_ECO" type="integer" />
+      <property name="numTur" column="PLAZAS_TURISTA" type="integer" />
+      <property name="numBuss" column="PLAZAS_BUSSINESS" type="integer" />
+      
+      <many-to-one name="compania" column="REF_COMPAÑIA_AEREA" class="agencia.modelo.CompaniaAerea" fetch="select"/>
+      
+      <set name="vuelosList" table="VUELOS_AVIONES" inverse="true" lazy="true" fetch="select">
+          <key column="REF_AVION" />  <!-- FK de Telefono -->
+          <one-to-many class="agencia.modelo.Vuelo" />
+      </set> 
+
+  </class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="agencia.modelo.CompaniaHotelera" table="companias_hotelera" catalog="agencia">
+    <id column="REF_COMPAÑIA_HOTELERA" name="refCompañia" type="string"/>
+    <property column="NOMBRE" name="nombre" type="string"/>
+    <property column="PAIS" name="pais" type="string"/>
+    <set fetch="select" inverse="true" lazy="true" name="hotelesList" table="HOTELES_COMPAÑIAS">
+      <key column="REF_COMPAÑIA_HOTELERA"/>
+      <!-- FK de Telefono -->
+      <one-to-many class="agencia.modelo.Hotel"/>
+    </set>
+  </class>
+</hibernate-mapping>

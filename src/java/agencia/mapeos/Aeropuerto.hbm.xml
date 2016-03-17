@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.Aeropuerto" table="Aeropuertos" catalog="agencia">
+
+      <id name="codigo" column="REF_AEROPUERTO" type="string"/>
+      
+      <property name="nombre" column="NOMBRE" type="string" />
+      <property name="pais" column="PAIS" type="string" />
+      <property name="ciudad" column="CIUDAD" type="string" />
+      
+      <set name="vuelosList" table="VUELOS_AEROPUERTOS" inverse="true" lazy="true" fetch="select">
+          <key column="REF_AEROPUERTO" />  <!-- FK de Telefono -->
+          <one-to-many class="agencia.modelo.Vuelo" />
+      </set>
+      
+  </class>
+
+</hibernate-mapping>

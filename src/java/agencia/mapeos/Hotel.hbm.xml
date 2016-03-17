@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="agencia.modelo.Hotel" table="hoteles" catalog="agencia">
+    <id column="REF_HOTEL" name="refHotel" type="integer">
+      <generator class="native"/>
+    </id>
+    <property column="NOMBRE" name="nombre" type="string"/>
+    <property column="DESCRIPCION" name="descripcion" type="string"/>
+    <property column="CIUDAD" name="ciudad" type="string"/>
+    <property column="DIRECCION" name="direccion" type="string"/>
+    <property column="CATEGORIA" name="categoria" type="integer"/>
+    <property column="HAB_INDIVIDUAL" name="habInd" type="integer"/>
+    <property column="HAB_DOBLE" name="habDob" type="integer"/>
+    <property column="HAB_SUPERIOR" name="habSup" type="integer"/>
+    <property column="PECIO_INDIVIDUAL" name="preInd" type="double"/>
+    <property column="PECIO_DOBLE" name="preDob" type="double"/>
+    <property column="PECIO_SUPERIOR" name="preSup" type="double"/>
+    <many-to-one class="agencia.modelo.CompaniaHotelera" column="REF_COMPAÑIA_HOTELERA" fetch="select" name="compañia"/>
+    <set fetch="select" inverse="true" lazy="true" name="reservasList" table="RESERVAS_RESERVASHOTELES">
+      <key column="REF_HOTEL"/>
+      <!-- FK de Telefono -->
+      <one-to-many class="agencia.modelo.ReservaHotel"/>
+    </set>
+  </class>
+</hibernate-mapping>

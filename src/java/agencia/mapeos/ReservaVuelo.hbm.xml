@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.ReservaVuelo" table="reservas_vuelos" catalog="agencia">
+
+      <id name="refReserva" column="REF_RESERVA_VUELO" type="integer">
+          <generator class="native" />
+      </id>
+       
+      <property name="numPlazasBuss" column="PLAZAS_BUSSINESS" type="integer" />
+      <property name="numPlazasTur" column="PLAZAS_TURISTA" type="integer" />
+      <property name="numPlazasEco" column="PLAZAS_ECO" type="integer" />
+      <property name="preTot" column="PRECIO_TOTAL" type="double" />
+      
+      <many-to-one name="vuelo" column="REF_VUELO" class="agencia.modelo.Vuelo" fetch="select"/>
+      
+      <many-to-one name="reserva" column="REF_RESERVA" class="agencia.modelo.Reservas" fetch="select"/>
+      
+  </class>
+
+</hibernate-mapping>

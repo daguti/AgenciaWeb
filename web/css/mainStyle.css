@@ -1,0 +1,163 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-abr-2015, 13:51:45
+    Author     : David
+*/
+body {
+    margin: 0px;
+    margin-top: -20px;
+}
+#header {
+    height: auto;
+    background-image: url("img/headerImg.jpg");
+    background-repeat: no-repeat;
+}
+#headText {
+    display: inline;
+    text-align: left;
+    margin-left: 10px;
+}
+#headText h1 {
+    padding-top: 30px;
+    font-family: cursive;
+    color: darkgreen;
+    display: inline-block;
+}
+#headText #firstPart {
+    padding-top: 30px;
+    font-family: cursive;
+    color: blue;
+    display: inline-block;
+}
+#headText img {
+    max-height: 80px;
+    max-width: 80px;
+}
+#headLogin {
+    display: inline;
+    float: right;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#headLogin a {
+    color: #711F30;
+    text-decoration: none;
+}
+nav ul {
+    display: inline;
+}
+footer {
+    background-color: #6699ff;
+}
+footer img {
+    max-height: 30px;
+    max-width: 30px;
+}
+footer h4 {
+    font-family: cursive;
+    color: darkgreen;
+    display: inline-block;
+}
+footer #firstPart {
+    font-family: cursive;
+    color: blue;
+    display: inline-block;
+}
+#ofertas {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+html { 
+    height: 100%; 
+}
+.ui-autocomplete li:hover {
+    background-color: #99ccff;
+}
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  max-width: 300px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+ 
+  .ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+ 
+    &.ui-state-hover, &.ui-state-active {
+      color: #ffffff;
+      text-decoration: none;
+      background-color: #0088cc;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      background-image: none;
+    }
+  }
+}
+#buscador {
+    padding-left: 10px;
+}
+.busquedaLateral {
+  max-width: 400px;
+  display: inline-block;
+  padding-right: 10px;
+  border-right: 3px solid #e7e7e7;
+  background-color: rgb(215, 235, 236)
+}
+.resetGrid {
+  margin-top: -20px;
+  margin-left: -15px;
+}
+body {
+    background-color: azure;
+}
+li a:hover {
+    background-color: rgba(245, 238, 238, 0.87);
+}
+.nav-tabs {
+  border: 2px solid #ddd;
+  border-radius: 10px 10px 0px 0px;
+}
+#horizontalSearch {
+  background-color: #e7e7e7;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 2px solid #C3B7B7;
+  border-top: 2px solid #C3B7B7;
+}

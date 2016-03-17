@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.DisponibilidadHotel" table="disponibilidad_hoteles" catalog="agencia">
+      
+      <id name="fecha" column="FECHA" type="date"/>
+      
+      <property name="refHotel" column="REF_HOTEL" type="integer" />
+      <property name="indDisp" column="HAB_INDIVIDUAL" type="integer" />
+      <property name="dobDisp" column="HAB_DOBLE" type="integer" />
+      <property name="supDisp" column="HAB_SUPERIOR" type="integer" />
+      
+  </class>
+
+</hibernate-mapping>
+

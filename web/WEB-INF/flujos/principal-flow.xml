@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/webflow
+       http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+       start-state="entrada">
+
+      <!-- Por defecto, el primer estado será el primero en ejecutarse -->
+      <view-state id="entrada" view="inicio">
+            <transition on="submit" to="confirma" />
+            <transition on="cancel" to="cancelEnd" />
+      </view-state>
+
+      <view-state id="confirma" view="confirmar">
+            <transition on="submit" to="detail" />
+            <transition on="cancel" to="cancelEnd" />
+      </view-state>
+      
+      <!--<action-state id="saveConfirm">
+            <action bean="fluxActions" method="execute"/>
+            <transition on="success" to="detail"/>
+            <transition on="error" to="cancel"/>
+      </action-state>-->
+      
+      <end-state id="detail" view="detalle" />
+      <end-state id="cancelEnd" view="cancelar" />
+</flow>

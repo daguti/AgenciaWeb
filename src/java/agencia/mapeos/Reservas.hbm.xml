@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.Reservas" table="reservas" catalog="agencia">
+
+      <id name="refReserva" column="REF_RESERVA" type="integer">
+          <generator class="native" /> 
+      </id>
+
+      <property name="confirm" column="CONFIRMADA" type="boolean" />
+      <property name="fecReserva" column="FEC_RESERVA" type="date" />
+      
+      <property name="username" column="REF_USUARIO" type="string"/> 
+      
+      <one-to-one name="reservHotel" class="agencia.modelo.ReservaHotel"
+			cascade="save-update"></one-to-one>
+
+      <set name="reservaVueloList" table="RESERVAS_RESERVASVUELOS" inverse="true" lazy="true" fetch="select">
+          <key column="REF_RESERVA" />  
+          <one-to-many class="agencia.modelo.ReservaVuelo" />
+      </set>
+      
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.Usuario" table="Usuarios" catalog="agencia">
+
+      <id name="refUsuario" column="REF_USUARIO" type="integer">
+          <generator class="native" />
+      </id>
+      
+      <property name="nombre" column="NOMBRE" type="string" />
+      <property name="apellidos" column="APELLIDOS" type="string" />
+      <property name="direccion" column="DIRECCION" type="string" />
+      <property name="pais" column="PAIS" type="string" />
+      <property name="poblacion" column="POBLACION" type="string" />
+      <property name="CP" column="CP" type="integer" />
+      <property name="userName" column="USERNAME" type="string" />
+      <property name="pass" column="PASS" type="string" />
+      <property name="correo" column="EMAIL" type="string" />
+      <property name="refCompañia" column="REF_COMPAÑIA" type="string" />
+      <property name="userType" column="USER_TYPE" type="integer" />
+      
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.OfertaHotel" table="ofertas_hoteles" catalog="agencia">
+      
+      <id name="refOfertaHotel" column="REF_OFERTA_HOTEL" type="integer">
+          <generator class="native" />
+      </id>
+      
+      <property name="refHotel" column="REF_HOTEL" type="integer" />
+      <property name="fecIni" column="FEC_INI" type="date" />
+      <property name="fecFin" column="FEC_FIN" type="date" />
+      <property name="preInd" column="PRE_INDIVIDUAL" type="double" />
+      <property name="preDob" column="PRE_DOBLE" type="double" />
+      <property name="preSup" column="PRE_SUPERIOR" type="double" />
+      
+  </class>
+
+</hibernate-mapping>
+

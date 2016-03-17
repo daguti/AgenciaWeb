@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="agencia.modelo.Vuelo" table="vuelos" catalog="agencia">
+
+      <id name="refVuelo" column="REF_VUELO" type="integer">
+          <generator class="native" />
+      </id>
+      
+      <property name="numBuss" column="PLAZAS_BUSSINESS" type="integer" />
+      <property name="numTur" column="PLAZAS_TURISTA" type="integer" />
+      <property name="numEco" column="PLAZAS_ECO" type="integer" />
+      <property name="fecVuelo" column="FEC_VUELO" type="date" />
+      <property name="horaSalida" column="HORA_SALIDA" type="string" />
+      <property name="duracion" column="DURACION" type="string" />
+      <property name="preTur" column="PRECIO_TURISTA" type="double" />
+      <property name="preEco" column="PRECIO_ECO" type="double" />
+      <property name="preBuss" column="PRECIO_BUSSINES" type="double" />
+
+      <many-to-one name="aeroDest" column="REF_AEROPUERTO_DEST" class="agencia.modelo.Aeropuerto" fetch="select"/>
+      
+      <many-to-one name="aeroOrig" column="REF_AEROPUERTO_ORIG" class="agencia.modelo.Aeropuerto" fetch="select"/>
+      
+      <many-to-one name="avion" column="REF_AVION" class="agencia.modelo.Avion" fetch="select"/>
+      
+      <set name="reservasList" table="RESERVAS_RESERVASVUELOS" inverse="true" lazy="true" fetch="select">
+          <key column="REF_VUELO" />  <!-- FK de Telefono -->
+          <one-to-many class="agencia.modelo.ReservaVuelo" />
+      </set>
+      
+  </class>
+
+</hibernate-mapping>
